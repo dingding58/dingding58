@@ -1,0 +1,6 @@
+from urllib import parse
+res=parse.quote
+print(res)
+
+res=parse.unquote('%E7%BE%8E%E5%A5%B3')
+print(res)
