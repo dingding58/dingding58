@@ -1,0 +1,15 @@
+let cocktailSort= (arr) => {
+  let L = 0
+  let R = arr.length-1 
+  while(L < R) {
+    for (let i = L; i < R; i++) {
+    	[arr[i], arr[i + 1]] = arr[i] > arr[i + 1] ? [arr[i + 1], arr[i]] : [arr[i], arr[i + 1]]
+    }
+    R--
+    for (let i = R; i > L; i--) {
+    	[arr[i], arr[i - 1]] = arr[i] < arr[i - 1] ? [arr[i - 1], arr[i]] : [arr[i], arr[i - 1]]
+    }
+    L++
+}
+  return arr
+}
