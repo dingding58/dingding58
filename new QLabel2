@@ -1,0 +1,17 @@
+ search_show_label = new QLabel();
+    search_show_label->setParent(this);
+    search_show_label->setFixedSize(300, 50);
+    search_show_label->move(350, 150);
+    search_show_label->setStyleSheet("QLabel {background-color : white;}");
+    search_show_label->setFrameShape(QFrame::Box);
+    search_show_label->setFrameShadow(QFrame::Raised);
+    search_show_label->setLineWidth(3);
+    connect(this,
+            SIGNAL(find(const QString&)),
+            this,
+            SLOT(show_search_info(const QString &)));
+
+void Finddialog::show_search_info(const QString& text)
+{
+    search_show_label->setText(text);
+}
